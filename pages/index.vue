@@ -8,6 +8,7 @@
       <div class="list-group m-4">
         <nuxt-link :to="{name: 'quiz', params: { quiz:'demo' } }" class="list-group-item list-group-item-action">Demo</nuxt-link>
         <nuxt-link :to="{name: 'quiz', params: { quiz:'respiratory' } }" class="list-group-item list-group-item-action">Respiratory System</nuxt-link>
+        <nuxt-link :to="{name: 'quiz', params: { quiz:'nervous' } }" class="list-group-item list-group-item-action">Nervous System</nuxt-link>
       </div>
     </div>
   </div>
