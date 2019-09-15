@@ -6,12 +6,8 @@
       </h1>
       <p>Select a quiz from the list below</p>
       <div class="list-group m-4">
-        <a href="/quiz?q=demo" class="list-group-item list-group-item-action">
-        Demo
-        </a>
-        <a href="/quiz?q=respiratory" class="list-group-item list-group-item-action">
-        Respiratory system
-        </a>
+        <nuxt-link :to="{name: 'quiz', params: { quiz:'demo' } }" class="list-group-item list-group-item-action">Demo</nuxt-link>
+        <nuxt-link :to="{name: 'quiz', params: { quiz:'respiratory' } }" class="list-group-item list-group-item-action">Respiratory System</nuxt-link>
       </div>
     </div>
   </div>

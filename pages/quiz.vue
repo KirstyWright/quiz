@@ -1,13 +1,16 @@
 <template>
   <b-container class='mt-4 quiz-container'>
-    <b-row>
+    <div class="d-flex justify-content-center mb-5 mt-5" v-if='!title'>
+      <b-spinner label="Loading..."></b-spinner>
+    </div>
+    <b-row v-if='title'>
       <b-col align-self="center">
         <h1 class='text-center'>
           {{this.title}}
         </h1>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row v-if='title'>
       <b-col align-self="center" v-if="question">
         <Question :key="question.content" :name="question.content" :answers="question.answers" @answered="nextQuestion"/>
       </b-col>
@@ -18,7 +21,7 @@
         </div>
       </b-col>
     </b-row>
-    <b-row class='mt-4'>
+    <b-row class='mt-4' v-if='title'>
       <b-col>
         <p class='text-center'>
           <span class='text-success'>Correct: {{this.correctCount}}</span>&nbsp;|&nbsp;
@@ -38,7 +41,7 @@ export default {
   },
   data () {
     return {
-      title: '',
+      title: false,
       question: false,
       askedQuestions: [],
       remainingQuestions: [],
@@ -47,11 +50,10 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$route)
-    // if (typeof this.$route.query.q === 'undefined') {
-    //   this.$router.push('/')
-    // }
-    this.buildQuiz(this.$route.query.q)
+    if (typeof this.$route.params.quiz === 'undefined') {
+      this.$router.push('/')
+    }
+    this.buildQuiz(this.$route.params.quiz)
   },
   methods: {
     async buildQuiz (param) {
