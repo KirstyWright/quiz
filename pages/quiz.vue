@@ -47,9 +47,10 @@ export default {
     }
   },
   mounted () {
-    if (typeof this.$route.query.q === 'undefined') {
-      this.$router.push('/')
-    }
+    console.log(this.$route)
+    // if (typeof this.$route.query.q === 'undefined') {
+    //   this.$router.push('/')
+    // }
     this.buildQuiz(this.$route.query.q)
   },
   methods: {
