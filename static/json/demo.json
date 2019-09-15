@@ -1,0 +1,24 @@
+{
+  "name": "Demo quiz",
+  "randomOrder": true,
+  "questions": [
+    {
+      "content": "Which one is yellow?",
+      "answers": [
+        { "content": "Banana", "correct": true },
+        { "content": "Apple", "correct": false },
+        { "content": "Orange", "correct": false },
+        { "content": "Plum", "correct": false }
+      ]
+    },
+    {
+      "content": "Which one is orange?",
+      "answers": [
+        { "content": "Banana", "correct": false },
+        { "content": "Apple", "correct": false },
+        { "content": "Orange", "correct": true },
+        { "content": "Plum", "correct": false }
+      ]
+    }
+  ]
+}
