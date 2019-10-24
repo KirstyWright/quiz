@@ -12,7 +12,8 @@
     </b-row>
     <b-row v-if='title'>
       <b-col align-self="center" v-if="question">
-        <Question :key="question.content" :name="question.content" :answers="question.answers" @answered="nextQuestion"/>
+        <Question v-if="question.answers" :key="question.content" :name="question.content" :answers="question.answers" @answered="nextQuestion"/>
+        <WrittenQuestion v-if="question.answer" :key="question.content" :name="question.content" :answer="question.answer" @answered="nextQuestion"/>
       </b-col>
       <b-col align-self="center" v-if="!question && this.remainingQuestions.length == 0">
         <div class='text-center mt-5 mb-5'>
@@ -35,9 +36,11 @@
 
 <script>
 import Question from '../components/Question.vue'
+import WrittenQuestion from '../components/WrittenQuestion.vue'
 export default {
   components: {
-    Question
+    Question,
+    WrittenQuestion
   },
   data () {
     return {
