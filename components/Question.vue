@@ -47,6 +47,7 @@ export default {
         return answer.id === id
       })
       answer.selected = true
+      answer.submission = answer.content
       if (answer.correct) {
         this.tooltip = 'Congrats'
       } else {

@@ -51,13 +51,16 @@ export default {
       if (this.submission.toLowerCase().trim() === this.answer.toLowerCase().trim()) {
         this.tooltip = 'Correct!'
         this.correct = true
+        setTimeout(() => {
+          this.$emit('answered', { correct: this.correct, submission: this.submission })
+        }, 1000)
       } else {
         this.tooltip = 'Wrong! The correct answer is: ' + this.answer
         this.correct = false
+        setTimeout(() => {
+          this.$emit('answered', { correct: this.correct, submission: this.submission })
+        }, 3000)
       }
-      setTimeout(() => {
-        this.$emit('answered', { correct: this.correct })
-      }, 1000)
     }
   }
 }

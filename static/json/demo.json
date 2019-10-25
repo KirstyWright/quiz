@@ -19,6 +19,14 @@
         { "content": "Orange", "correct": true },
         { "content": "Plum", "correct": false }
       ]
+    },
+    {
+      "content": "https://assets.publishing.service.gov.uk/media/55b75e26ed915d07e2000007/warning-sign-distance-to-stop-line-ahead-100-yards.jpg",
+      "answer": "Apple"
+    },
+    {
+      "content": "Type Banana",
+      "answer": "Banana"
     }
   ]
 }
